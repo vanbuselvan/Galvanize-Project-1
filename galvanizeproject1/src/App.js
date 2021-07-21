@@ -1,12 +1,14 @@
 
 import './App.css';
+import React, { Component } from 'react';
+import Calculator from './components/calculator'
 
-function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (<div>
+      <Calculator />
+    </div>)
+  }
 }
 
 export default App;
