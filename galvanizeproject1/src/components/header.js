@@ -1,9 +1,10 @@
 import React from 'react'
+import './Header.css';
 
 export default function header() {
     return (
-        <div>
-            header is working
+        <div class="Header">
+            <h1 class="Text">Partition Calculator</h1>
         </div>
     )
 }
