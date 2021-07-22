@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './Textfield.css'
 
 export default class Textfield extends Component {
 
@@ -20,12 +21,12 @@ export default class Textfield extends Component {
 
     render() {
         return (<form onSubmit={this.didHitSubmit}>
-            <label>Annual Income: </label>
+            <label class="Label">Annual Income: </label>
             <input type="number" value={this.props.incomeValue}
                 name="incomeValue"
                 onChange={this.didUpdateTextfield} />
 
-            <label>State Tax: </label>
+            <label class="Label">State Tax: </label>
             <input type="number" value={this.props.taxValue}
                 name="taxValue"
                 onChange={this.didUpdateTextfield} />
