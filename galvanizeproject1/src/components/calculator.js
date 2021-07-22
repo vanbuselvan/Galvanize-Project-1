@@ -39,10 +39,10 @@ class Calculator extends Component {
                         onTextfieldChange={this.updateState} />
                 </div>
                 <div>
-                    <DataCard title="Income After Tax: " data={this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 100)} />
-                    <DataCard title="Money for Needs: " data={this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 50)} />
-                    <DataCard title="Money for Wants: " data={this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 30)} />
-                    <DataCard title="Money for Savings: " data={this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 20)} />
+                    <DataCard title="Income After Tax: " data={"$" + this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 100)} />
+                    <DataCard title="Money for Needs: " data={"$" + this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 50)} />
+                    <DataCard title="Money for Wants: " data={"$" + this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 30)} />
+                    <DataCard title="Money for Savings: " data={"$" + this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 20)} />
                 </div>
             </div>
         )
