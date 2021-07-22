@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Textfield from "./textfield";
+import DataCard from "./DataCard"
 
 class Calculator extends Component {
 
@@ -12,29 +13,40 @@ class Calculator extends Component {
         this.updateState = this.updateState.bind(this);
     }
 
-    updateState(event){
+    updateState(event) {
         const target = event.target;
         const value = parseInt(target.value)
         const name = target.name;
-    
+
         this.setState({
-          [name]: value
+            [name]: value
         });
         console.log("Calculator did change state: " + name + " " + value);
     }
-    
-    calculateAfterTaxPartition(income, taxPercent, percentOfIncome){
-        const convertedTax = (100- parseInt(taxPercent))/100;
-        const convertedPercentOfIncome = percentOfIncome/100;
-        return income*convertedTax*convertedPercentOfIncome;
+
+    calculateAfterTaxPartition(income, taxPercent, percentOfIncome) {
+        const convertedTax = (100 - parseInt(taxPercent)) / 100;
+        const convertedPercentOfIncome = percentOfIncome / 100;
+        return income * convertedTax * convertedPercentOfIncome;
     }
 
     render() {
-        return(
-        <Textfield incomeValue = {this.state.incomeValue} 
-        taxValue = {this.state.taxValue} 
-        onTextfieldChange = {this.updateState}/>
-        )}
+        return (
+            <div>
+                <div>
+                    <Textfield incomeValue={this.state.incomeValue}
+                        taxValue={this.state.taxValue}
+                        onTextfieldChange={this.updateState} />
+                </div>
+                <div>
+                    <DataCard title="Income After Tax: " data={this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 100)} />
+                    <DataCard title="Money for Needs: " data={this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 50)} />
+                    <DataCard title="Money for Wants: " data={this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 30)} />
+                    <DataCard title="Money for Savings: " data={this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 20)} />
+                </div>
+            </div>
+        )
+    }
 }
 
 export default Calculator;
