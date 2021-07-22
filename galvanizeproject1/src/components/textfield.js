@@ -20,12 +20,12 @@ export default class Textfield extends Component {
 
     render() {
         return (<form onSubmit={this.didHitSubmit}>
-            <label>Annual Income: </label>
+            <label> Enter Income($): </label>
             <input type="number" value={this.props.incomeValue}
                 name="incomeValue"
                 onChange={this.didUpdateTextfield} />
 
-            <label>State Tax: </label>
+            <label> Enter State Tax(%): </label>
             <input type="number" value={this.props.taxValue}
                 name="taxValue"
                 onChange={this.didUpdateTextfield} />
