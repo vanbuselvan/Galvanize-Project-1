@@ -9,10 +9,10 @@ class Calculator extends Component {
             incomeValue: 0,
             taxValue: 0.00
         }
-        this.handleStateChange = this.handleStateChange.bind(this);
+        this.updateState = this.updateState.bind(this);
     }
 
-    handleStateChange(event){
+    updateState(event){
         const target = event.target;
         const value = parseInt(target.value)
         const name = target.name;
@@ -27,7 +27,7 @@ class Calculator extends Component {
         return(
         <Textfield incomeValue = {this.state.incomeValue} 
         taxValue = {this.state.taxValue} 
-        onChange = {this.handleStateChange}/>
+        onTextfieldChange = {this.updateState}/>
         )}
 }
 

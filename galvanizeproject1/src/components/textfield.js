@@ -5,30 +5,30 @@ export default class Textfield extends Component {
     constructor(props) {
         super(props)
         
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.didUpdateTextfield = this.didUpdateTextfield.bind(this);
+        this.didHitSubmit = this.didHitSubmit.bind(this);
     }
 
-    handleChange(event) {
-        this.props.onChange(event);
+    didUpdateTextfield(event) {
+        this.props.onTextfieldChange(event);
         console.log(this.state)
     }
 
-    handleSubmit(event) {
+    didHitSubmit(event) {
         event.preventDefault();
     }
 
     render() {
-        return (<form onSubmit={this.handleSubmit}>
+        return (<form onSubmit={this.didHitSubmit}>
             <label>Annual Income: </label>
             <input type="number" value={this.props.incomeValue}
                 name="incomeValue"
-                onChange={this.handleChange} />
+                onChange={this.didUpdateTextfield} />
 
             <label>State Tax: </label>
             <input type="number" value={this.props.taxValue}
                 name="taxValue"
-                onChange={this.handleChange} />
+                onChange={this.didUpdateTextfield} />
 
             <input type="submit" value="Submit" />
         </form>
