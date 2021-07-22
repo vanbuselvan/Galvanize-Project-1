@@ -7,7 +7,7 @@ class Calculator extends Component {
         super(props)
         this.state = {
             incomeValue: 0,
-            taxValue: 0.00
+            taxValue: 0
         }
         this.updateState = this.updateState.bind(this);
     }
@@ -21,6 +21,12 @@ class Calculator extends Component {
           [name]: value
         });
         console.log("Calculator did change state: " + name + " " + value);
+    }
+    
+    calculateAfterTaxPartition(income, taxPercent, percentOfIncome){
+        const convertedTax = (100- parseInt(taxPercent))/100;
+        const convertedPercentOfIncome = percentOfIncome/100;
+        return income*convertedTax*convertedPercentOfIncome;
     }
 
     render() {
