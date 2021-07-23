@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Textfield from "./textfield";
 import DataCard from "./DataCard"
+import GenerateJoke from "./GenerateJoke.js"
 import './Calculator.css'
 
 class Calculator extends Component {
@@ -44,6 +45,9 @@ class Calculator extends Component {
                     <DataCard title="Money for Needs: " data={"$" + this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 50)} />
                     <DataCard title="Money for Wants: " data={"$" + this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 30)} />
                     <DataCard title="Money for Savings: " data={"$" + this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 20)} />
+                </div>
+                <div>
+                    <GenerateJoke />
                 </div>
             </div>
         )
