@@ -80,13 +80,13 @@ class Calculator extends Component {
                             { title: 'Savings', value: this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 20), color: '#00FF00' },
                         ]}
                         label={({ dataEntry }) => {
-                            if (dataEntry.value === .5) {
+                            if (dataEntry.value === this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 50)) {
                                 return "Needs";
                             }
-                            else if (dataEntry.value === .3) {
+                            else if (dataEntry.value === this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 30)) {
                                 return "Wants";
                             }
-                            else if (dataEntry.value === .2) {
+                            else if (dataEntry.value === this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 20)) {
                                 return "Savings";
                             }
 
