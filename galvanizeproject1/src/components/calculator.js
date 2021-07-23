@@ -35,19 +35,40 @@ class Calculator extends Component {
     render() {
         return (
             <div class="Body">
-                <div>
+                <div class="row">
                     <Textfield incomeValue={this.state.incomeValue}
                         taxValue={this.state.taxValue}
                         onTextfieldChange={this.updateState} />
                 </div>
                 <div class="DataCards">
-                    <DataCard title="Income After Tax: " data={"$" + this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 100)} />
-                    <DataCard title="Money for Needs: " data={"$" + this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 50)} />
-                    <DataCard title="Money for Wants: " data={"$" + this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 30)} />
-                    <DataCard title="Money for Savings: " data={"$" + this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 20)} />
-                </div>
-                <div>
-                    <GenerateJoke />
+                    <div class="row">
+                        <div class = "col-4">
+                            <DataCard title="Income After Tax: " data={"$" + this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 100)} />
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                    <div class = "col-4">
+                        <DataCard title="Money for Needs: " data={"$" + this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 50)} />
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class = "col-4">
+                        <DataCard title="Money for Wants: " data={"$" + this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 30)} />
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class = "col-4">
+                        <DataCard title="Money for Savings: " data={"$" + this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 20)} />
+                        </div>
+                        <div class = "col-4">
+                            <GenerateJoke />
+                        </div>
+                    </div>
+
+
+
+
                 </div>
             </div>
         )
