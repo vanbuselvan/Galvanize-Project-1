@@ -5,7 +5,12 @@ import GenerateJoke from "./GenerateJoke.js"
 import { PieChart } from 'react-minimal-pie-chart';
 import './Calculator.css'
 
+const defaultLabelStyle = {
+    fontSize: '7px',
+    fontFamily: 'sans-serif',
+}
 class Calculator extends Component {
+
 
     constructor(props) {
         super(props)
@@ -50,13 +55,32 @@ class Calculator extends Component {
                 <div>
                     <GenerateJoke />
                 </div>
-                <div style={{width: "40vh", height: "40vh"}}>
+                <div style={{ width: "100vh", height: "100vh" }}>
                     <PieChart
                         data={[
-                            { title: 'Needs', value: this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 50) , color: '#0000FF' },
-                            { title: 'Wants', value: this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 30) , color: '#FFFF00' },
-                            { title: 'Savings', value: this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 20) , color: '#00FF00' },
+                            { title: 'Needs', value: this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 50), color: '#0000FF' },
+                            { title: 'Wants', value: this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 30), color: '#FFFF00' },
+                            { title: 'Savings', value: this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 20), color: '#00FF00' },
                         ]}
+                        label={({ dataEntry }) => {
+                            if (dataEntry.value === .5) {
+                                return "Needs";
+                            }
+                            else if (dataEntry.value === .3) {
+                                return "Wants";
+                            }
+                            else if (dataEntry.value === .2) {
+                                return "Savings";
+                            }
+
+                        }
+
+
+                        }
+                        labelStyle={{
+                            ...defaultLabelStyle,
+                        }}
+
                     />
                 </div>
             </div>
