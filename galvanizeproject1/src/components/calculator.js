@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Textfield from "./textfield";
 import DataCard from "./DataCard"
 import GenerateJoke from "./GenerateJoke.js"
+import { PieChart } from 'react-minimal-pie-chart';
 import './Calculator.css'
 
 class Calculator extends Component {
@@ -9,7 +10,7 @@ class Calculator extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            incomeValue: 0,
+            incomeValue: 1,
             taxValue: 0
         }
         this.updateState = this.updateState.bind(this);
@@ -48,6 +49,15 @@ class Calculator extends Component {
                 </div>
                 <div>
                     <GenerateJoke />
+                </div>
+                <div style={{width: "40vh", height: "40vh"}}>
+                    <PieChart
+                        data={[
+                            { title: 'Needs', value: this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 50) , color: '#0000FF' },
+                            { title: 'Wants', value: this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 30) , color: '#FFFF00' },
+                            { title: 'Savings', value: this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 20) , color: '#00FF00' },
+                        ]}
+                    />
                 </div>
             </div>
         )
