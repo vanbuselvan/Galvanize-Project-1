@@ -13,7 +13,7 @@ export default function header() {
                             height="30"
                             class="d-inline-block align-top"
                             alt="" />
-                        Partitions Calculator
+                        Partition Calculator
                     </a>
                 </strong>
 
