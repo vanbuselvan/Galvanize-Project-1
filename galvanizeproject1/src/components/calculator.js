@@ -56,14 +56,15 @@ class Calculator extends Component {
                     <div class = "col-4">
                         <DataCard title="Money for Wants: " data={"$" + this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 30)} />
                         </div>
+
+                        <div class = "col-4">
+                            <GenerateJoke />
+                        </div>
                     </div>
                     <div class="row">
                     <div class = "col-4">
                         <DataCard title="Money for Savings: " data={"$" + this.calculateAfterTaxPartition(this.state.incomeValue, this.state.taxValue, 20)} />
-                        </div>
-                        <div class = "col-4">
-                            <GenerateJoke />
-                        </div>
+                        </div> 
                     </div>
 
 
