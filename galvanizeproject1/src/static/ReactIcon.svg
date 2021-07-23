@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="250px" height="250px" viewBox="0 0 250 250" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ReactIcon</title>
+    <defs>
+        <text id="text-1" font-family="Helvetica-Bold, Helvetica" font-size="125" font-weight="bold" letter-spacing="-3" fill="#FFFFFF">
+            <tspan x="25.2214355" y="165">123</tspan>
+        </text>
+        <filter x="-5.8%" y="-8.3%" width="111.6%" height="119.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ReactIcon">
+            <rect id="Rectangle" fill="#F7F7F7" x="0" y="0" width="250" height="250" rx="8"></rect>
+            <g id="123" fill="#FFFFFF" fill-opacity="1">
+                <use filter="url(#filter-2)" xlink:href="#text-1"></use>
+                <use xlink:href="#text-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

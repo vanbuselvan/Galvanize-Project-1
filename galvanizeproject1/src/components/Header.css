@@ -1,8 +1,6 @@
-.Header {
+nav {
     background-color: #50104A;
     color: white;
-    height: 8vh;
-    position: relative;
 }
 
 .Text {
@@ -10,4 +8,11 @@
     bottom: 0;
     left: 0;
     padding-left: 4vh;
+}
+/* Overrides Bootstrap class to size for logo*/
+img.d-inline-block.align-top {
+    width: 30px;
+    height: 30px;
+    box-sizing: unset;
+    padding-right: 16px;
 }
